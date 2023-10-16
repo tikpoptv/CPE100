@@ -1,18 +1,27 @@
-#include <stdio.h>
+#include<stdio.h>
 
-int lcm();
-
-int main(void) {
-    int n1,n2;
-    scanf("%d\n%d",&n1,&n2);
-    printf("%d",lcm(n1,n2));
+int lcm(int a, int b)
+{
+    
+    static int temp = 1;
+    if(temp % a == 0 && temp % b == 0)
+    {
+        return temp;
+    }
+    temp++;
+    lcm(a,b);
+    return temp;
 }
 
-int lcm(int n1,int n2) {
-    static int multiple = 0;
-    if (n1%n2==0)
+int main()
+{
+    int a,b;
+    scanf("%d\n%d",&a,&b);
+    if (a < 1 || b < 1)
     {
-        multiple += n1;
+        printf("ERROR");
+        return 0;
     }
-    
+    printf("%d",lcm(a,b));
+    return 0;
 }

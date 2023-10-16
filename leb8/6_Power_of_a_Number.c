@@ -9,8 +9,9 @@ int Power(int n,int topwr){
     }
     
 }
-
 int main(void) {
+
+
     int n,topwr;
     scanf("%d\n%d",&n,&topwr);
     printf("Power_of_a_Number = %d",Power(n,topwr));
